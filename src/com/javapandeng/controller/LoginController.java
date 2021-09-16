@@ -2,12 +2,11 @@ package com.javapandeng.controller;
 
 
 import com.javapandeng.base.BaseController;
-import com.javapandeng.po.CategoryDto;
-import com.javapandeng.po.Item;
-import com.javapandeng.po.ItemCategory;
-import com.javapandeng.po.Manage;
+import com.javapandeng.po.*;
 import com.javapandeng.service.ItemCategoryService;
+import com.javapandeng.service.ItemService;
 import com.javapandeng.service.ManageService;
+import com.javapandeng.service.UserService;
 import com.javapandeng.utils.Consts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,9 +27,13 @@ import java.util.List;
 public class LoginController extends BaseController {
 
     @Autowired
-    ManageService manageService;
+    private ManageService manageService;
     @Autowired
     private ItemCategoryService itemCategoryService;
+    @Autowired
+    private ItemService itemService;
+    @Autowired
+    private UserService userService;
     /**
      * 管理员登录前
      * @return
@@ -83,7 +86,52 @@ public class LoginController extends BaseController {
                 model.addAttribute("libs",list);
             }
         }
+        //折扣商品
+        List<Item> zks=itemService.listBySqlReturnEntity("select * from item where isDelete=0 and zk is not null order by zk desc limit 0,10");
+        model.addAttribute("zks",zks);
+        //热销商品
+        List<Item> rxs=itemService.listBySqlReturnEntity("select * from item where isDelete=0  order by gmNum desc limit 0,10");
+        model.addAttribute("rxs",rxs);
+
+
         return "login/uIndex";
 
     }
+    /*
+    * 普通用户注册
+    * */
+    @RequestMapping("/res")
+    public String res(){
+
+        return"login/res";
+    }
+    /*
+    * 执行普通用户注册
+    * */
+    @RequestMapping("/toRes")
+    public String toRes(User u){
+        userService.insert(u);
+        return "login/uLogin";
+    }
+    /*普通用户登录入口*/
+    @RequestMapping("/uLogin")
+    public String uLogin(){
+        return "login/uLogin";
+    }
+
+    /*执行普通用户登录*/
+    @RequestMapping("/utoLogin")
+    public String utoLogin(User u,HttpServletRequest request){
+        User byEntity=userService.getByEntity(u);
+        if(byEntity==null){
+            return "redirect:/login/res.action";
+        }else{
+            request.getSession().setAttribute("role",2);
+            request.getSession().setAttribute("userName",byEntity.getUserName());
+            request.getSession().setAttribute("userId",byEntity.getId());
+            return "redirect:/login/uIndex.action";
+
+        }
+    }
+
 }
