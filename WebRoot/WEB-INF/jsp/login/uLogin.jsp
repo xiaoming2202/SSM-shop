@@ -4,15 +4,16 @@
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>首页</title>
+    <title>用户登录</title>
     <link type="text/css" rel="stylesheet" href="${ctx}/resource/user/css/style.css">
     <script src="${ctx}/resource/user/js/jquery-1.8.3.min.js"></script>
     <script src="${ctx}/resource/user/js/jquery.luara.0.0.1.min.js"></script>
 </head>
 <body>
 
-<div class="width100 hidden_yh" style="border-top: 1px solid #ddd">
+<div class="width100 hidden_yh" style="height: 573px;background: url('${ctx}/resource/user/images/bj.jpg')no-repeat center">
     <div class="width1200 hidden_yh center_yh" style="margin-top: 75px">
+        <div class="right_yh bj_fff" style="width: 408px;height: 438px;">
         <form action="${ctx}/login/utoLogin" method="post">
           <h3 class="tcenter font30 c_33" style="font-weight: 100;margin-top: 36px;
 margin-bottom: 36px;">账户</h3>
@@ -31,6 +32,7 @@ font-size: 16px; text-indent:22px;">
 background:#dd4545;outline: none;border: 0;color:#fff; cursor:pointer;">
             </div>
         </form>
+        </div>
     </div>
 </div>
 <%@include file="/common/ufooter.jsp"%>

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -127,11 +128,19 @@ public class LoginController extends BaseController {
             return "redirect:/login/res.action";
         }else{
             request.getSession().setAttribute("role",2);
-            request.getSession().setAttribute("userName",byEntity.getUserName());
+            request.getSession().setAttribute("username",byEntity.getUserName());
             request.getSession().setAttribute("userId",byEntity.getId());
             return "redirect:/login/uIndex.action";
 
         }
     }
+    /*前端用户退出*/
+    @RequestMapping("/uTui")
+    public String uTui(HttpServletRequest request){
+        HttpSession session=request.getSession();
+        session.invalidate();
+        return "redirect:/login/uIndex.action";
+    }
+    /**/
 
 }
