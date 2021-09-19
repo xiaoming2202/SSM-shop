@@ -9,13 +9,25 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="184eebdf-2f65-43db-8eb7-dbb0b85f5095" name="Default Changelist" comment="网站用户首页">
-      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/item/shoplist.jsp" afterDir="false" />
+    <list default="true" id="184eebdf-2f65-43db-8eb7-dbb0b85f5095" name="Default Changelist" comment="登录注册">
+      <change afterPath="$PROJECT_DIR$/src/com/javapandeng/controller/ScController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/javapandeng/mapper/ScMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/javapandeng/mapper/ScMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/javapandeng/po/Sc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/javapandeng/po/car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/javapandeng/service/ScService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/javapandeng/service/impl/ScServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/javapandeng/controller/ItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/javapandeng/controller/ItemController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/javapandeng/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/javapandeng/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/login/uLogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/login/uLogin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/javapandeng/mapper/OrderDetailMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/javapandeng/mapper/OrderDetailMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/javapandeng/utils/Consts.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/javapandeng/utils/Consts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/item/shoplist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/item/shoplist.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/login/uIndex.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/login/uIndex.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/javapandeng/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javapandeng/controller/ItemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/javapandeng/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javapandeng/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/javapandeng/mapper/OrderDetailMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javapandeng/mapper/OrderDetailMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/javapandeng/utils/Consts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javapandeng/utils/Consts.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +107,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML4 File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/item" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/javapandeng/mapper" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3383915" />
@@ -103,11 +115,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaProjects\testMaven13\testMaven\src\com\javapandeng\mapper" />
       <recent name="D:\JavaProjects\testMaven13\testMaven\WebRoot\WEB-INF\jsp\item" />
       <recent name="D:\JavaProjects\testMaven13\testMaven\WebRoot\WEB-INF\jsp\login" />
       <recent name="D:\JavaProjects\testMaven13\testMaven\WebRoot\common" />
       <recent name="D:\JavaProjects\testMaven13\testMaven\WebRoot\WEB-INF\jsp\message" />
-      <recent name="D:\JavaProjects\testMaven13\testMaven\src\com\javapandeng\mapper" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\JavaProjects\testMaven13\testMaven\WebRoot\WEB-INF\jsp\item" />
@@ -115,9 +127,9 @@
       <recent name="D:\course\qlkrp\backup\testMaven\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.javapandeng.po" />
       <recent name="com.javapandeng.controller" />
       <recent name="com.javapandeng.mapper" />
-      <recent name="com.javapandeng.po" />
       <recent name="com.javapandeng.service" />
       <recent name="com.javapandeng.service.impl" />
     </key>
@@ -327,7 +339,7 @@
       <workItem from="1630821074477" duration="69267000" />
       <workItem from="1631247093631" duration="29610000" />
       <workItem from="1631451872800" duration="36970000" />
-      <workItem from="1631789194161" duration="12268000" />
+      <workItem from="1631789194161" duration="30072000" />
     </task>
     <task id="LOCAL-00001" summary="网站用户首页">
       <created>1631805677779</created>
@@ -336,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631805677779</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="登录注册">
+      <created>1631890883590</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1631890883590</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,9 +375,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="网站用户首页" />
-    <option name="LAST_COMMIT_MESSAGE" value="网站用户首页" />
+    <MESSAGE value="登录注册" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录注册" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/javapandeng/controller/ScController.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="java.lang.String" memberName="value" />

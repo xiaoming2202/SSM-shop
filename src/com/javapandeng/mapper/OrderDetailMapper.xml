@@ -58,7 +58,7 @@
             and item_id = #{itemId}
         </if>
         <if test="orderId != null">
-            and user_id = #{orderId}
+            and order_id = #{orderId}
         </if>
         <if test="total != null">
             and total = #{total}

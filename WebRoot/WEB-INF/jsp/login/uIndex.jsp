@@ -26,7 +26,7 @@
                        <div class="n3Nav">
                            <h3>${data.father.name}</h3>
                            <c:forEach items="${data.childrens}" var="child" varStatus="11">
-                               <a href="${ctx}/item/shoplist?categoryIdTwo=${child.id}">${child.name}</a>
+                               <a href="${ctx}/item/shopList?categoryIdTwo=${child.id}">${child.name}</a>
 
 
                            </c:forEach>

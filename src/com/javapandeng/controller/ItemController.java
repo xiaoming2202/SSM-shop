@@ -142,16 +142,26 @@ public class ItemController extends BaseController {
     /*
     * 按关键字或者二级分类查询
     * */
-    @RequestMapping("/shoplist")
+    @RequestMapping("/shopList")
     public String shoplist(Item item,String condition,Model model){
-        String sql="select * from item where isDelete=0";
-        if(isEmpty(item.getCategoryIdTwo())){
-            sql+="and category_id_two = "+item.getCategoryIdTwo();
+        String sql="select * from item where isDelete=0 ";
+        if(!isEmpty(item.getCategoryIdTwo())){
+            sql+=" and category_id_two = "+item.getCategoryIdTwo();
         }
         if(!isEmpty(condition)){
-            sql+="and name like '%"+condition+"%' ";
+            sql+=" and name like '%"+condition+"%' ";
             model.addAttribute("condition",condition);
         }
+        if(!isEmpty(item.getPrice())){
+            sql+=" order by (price+0) desc ";
+        }
+        if(!isEmpty(item.getGmNum())){
+            sql+=" order by gmNum desc ";
+        }
+        if(!isEmpty(item.getPrice())&&!isEmpty(item.getGmNum())){
+            sql+=" order by id desc ";
+        }
+
         Pager<Item> pagers=itemService.findBySqlRerturnEntity(sql);
         model.addAttribute("pagers",pagers);
         model.addAttribute("obj",item);
