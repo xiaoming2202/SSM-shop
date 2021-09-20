@@ -8,5 +8,7 @@ public class Consts {
     public static final String USERNAME = "username";
     /**前端用登录id**/
     public static final String USERID = "userId";
+    /**json返回码名称**/
+    public static final String RES="res";
 
 }

@@ -3,11 +3,15 @@ package com.javapandeng.controller;
 import com.javapandeng.base.BaseController;
 import com.javapandeng.po.User;
 import com.javapandeng.service.UserService;
+import com.javapandeng.utils.Consts;
 import com.javapandeng.utils.Pager;
+import oracle.jdbc.driver.Const;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/user")
@@ -25,5 +29,27 @@ public class UserController extends BaseController {
         model.addAttribute("pagers",pagers);
         model.addAttribute("obj",user);
         return "user/user";
+    }
+    @RequestMapping("/view")
+    public String view(Model model, HttpServletRequest request){
+        Object attribute=request.getSession().getAttribute(Consts.USERID);
+        if(attribute==null){
+            return "redirect:/login/uLogin";
+        }
+        Integer userId=Integer.valueOf(attribute.toString());
+        User obj=userService.load(userId);
+        model.addAttribute("obj",obj);
+        return "user/view";
+    }
+
+    @RequestMapping("/exUpdate")
+    public String exUpdate(User user,HttpServletRequest request){
+        Object attribute=request.getSession().getAttribute(Consts.USERID);
+        if(attribute==null){
+            return "redirect:/login/uLogin";
+        }
+        user.setId(Integer.valueOf(attribute.toString()));
+        userService.updateById(user);
+        return "redirect:/user/view/view.action";
     }
 }

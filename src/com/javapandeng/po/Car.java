@@ -5,7 +5,7 @@ import java.io.Serializable;
 /*
 * 购物车
 * */
-public class car implements Serializable {
+public class Car implements Serializable {
     private Integer id;
     private Integer itemId;
     private Integer userId;
@@ -14,7 +14,7 @@ public class car implements Serializable {
     private double price;
     private String total;
 
-    public car(Integer id, Integer itemId, Integer userId, Integer num, double price, String total) {
+    public Car(Integer id, Integer itemId, Integer userId, Integer num, double price, String total) {
         this.id = id;
         this.itemId = itemId;
         this.userId = userId;
@@ -22,7 +22,7 @@ public class car implements Serializable {
         this.price = price;
         this.total = total;
     }
-    public car(){}
+    public Car(){}
 
     public Integer getId() {
         return id;

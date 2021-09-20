@@ -91,7 +91,21 @@ maxPageItems="15" export="curPage=pageNumber">
 </div>
 <script >
     function addcar(id){
-    alert("已放入购物车");
+
+$.ajax({
+    type:"POST",
+    url:"${ctx}/car/exAdd?itemId="+id+"&num=1",
+    success:function (result){
+        var re=result;
+        if (re.res==0){
+            alert("请登录");
+            window.location.href="${ctx}/login/uLogin";
+        }
+        else{
+            window.location.href="${ctx}/car/findBySql";
+        }
+    }
+});
     }
 </script>
 <%@include file="/common/ufooter.jsp"%>
