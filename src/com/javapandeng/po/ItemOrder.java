@@ -2,6 +2,7 @@ package com.javapandeng.po;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 public class ItemOrder implements Serializable {
     private Integer id;
@@ -16,6 +17,7 @@ public class ItemOrder implements Serializable {
     * 0.新建代发货1.已取消 2已已发货3.到收货4已评价
     * */
     private Integer status;
+    private List<OrderDetail> details;
 
     public ItemOrder(Integer id, Integer itemId, Integer userId, User user, String code, Date addTime, String total, Integer isDelete, Integer status) {
         this.id = id;
@@ -100,5 +102,13 @@ public class ItemOrder implements Serializable {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public List<OrderDetail> getDetails() {
+        return details;
+    }
+
+    public void setDetails(List<OrderDetail> details) {
+        this.details = details;
     }
 }

@@ -26,8 +26,8 @@
 <!--折扣商品-->
 <div class="width1200 center_yh hidden_yh font14" style="height:40px;line-height:
 40px;">
-    <span>当前位置：</span><a href="${ctx}/login/uIndex"class="c_66">首页</a>>
-    <a href="#" class="c_66">个人中心</a>
+    <span>当前位置：</span><a href="${ctx}/login/uIndex"class="c_66">首页></a>>
+    <a href="#" class="c_66">个人中心></a>
 
 </div>
 <div class="width100 hidden_yh" style="background: #f0f0f0;padding-top: 34px;

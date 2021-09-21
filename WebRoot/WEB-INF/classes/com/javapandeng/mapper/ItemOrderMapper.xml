@@ -22,6 +22,8 @@
         <result property="isDelete" column="isDelete" jdbcType="INTEGER"/>
         <result property="status" column="status" jdbcType="INTEGER"/>
         <association property="user" column="user_id" select="com.javapandeng.mapper.UserMapper.load"/>
+        <collection property="details" column="id" ofType="com.javapandeng.po.OrderDetail" select="com.javapandeng.mapper.OrderDetailMapper.listByOrderId"/>
+
     </resultMap>
     <!-- 声明数据库字段 -->
     <sql id="ItemOrder_field">

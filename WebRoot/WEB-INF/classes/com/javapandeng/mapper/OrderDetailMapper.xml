@@ -179,6 +179,12 @@
         <include refid="OrderDetail_where"/>
     </select>
 
+    <select id="listByOrderId" resultMap="ResultMapOrderDetailDto">
+        select <include refid="OrderDetail_field"/>
+        from order_detail where order_id=#{id}
+    </select>
+
+
     <!-- 批量新增-->
     <select id="insertBatch" parameterType="java.util.List">
         insert into order_detail(
