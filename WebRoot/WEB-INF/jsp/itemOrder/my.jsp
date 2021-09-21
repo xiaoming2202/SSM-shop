@@ -83,19 +83,303 @@ padding-top:34px;padding-bottom: 34px;">
                     </c:forEach>
                     <div style="width: 838px;padding-top :30px;padding-bottom: 30px;"class="hidden_yh center_yh tleft">
                         <font class="font24">总金额</font>
-                        <font class="font24 red">${data.total}</font>
+                        <font class="font24 red">￥${data.total}</font>
+                        <c:if test="${data.status==0}">
+                            <a href="${ctx}/itemOrder/qx?id=${data.id}"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                取消订单
+                            </a>
+                        </c:if>
+                        <c:if test="${data.status==1}">
+                            <a href="#"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                已取消
+                            </a>
+                        </c:if>
+                        <c:if test="${data.status==2}">
+                            <a href="${ctx}/itemOrder/sh?id=${data.id}"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                去收货
+                            </a>
+                        </c:if>
+                        <c:if test="${data.status==3}">
+                            <a href="#"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                已收货
+                            </a>
+                        </c:if>
                     </div>
                 </div>
             </c:forEach>
-
         </div>
+
+        <!--已取消-->
+        <div class="allGoods width100 hidden_yh hhD"style="display: none;">
+            <c:forEach items="${yqx}" var="data" varStatus="1">
+                <div class="width100 hidden_yh">
+                    <div class="width100 hidden_yh hon20 c_66" style="background: #faf5f5;
+                text-indent: 47px;line-height: 50px;line-height: 50px;border-bottom:1px solid #ddd;">
+                        <fmt:formatDate value="${data.addTime}" type="both"/>&nbsp;&nbsp;订单号${data.code}
+                        <c:if test="${data.status==0}">待发货</c:if>
+                        <c:if test="${data.status==1}">已取消</c:if>
+                        <c:if test="${data.status==2}">待收货</c:if>
+                        <c:if test="${data.status==3}">已收货</c:if>
+                    </div>
+                    <c:forEach items="${data.details}" var="chil" varStatus="1">
+                        <div style="width: 838px;border-bottom: 1px dashed #dddddd;padding-bottom: 30px;"
+                             class="hidden_yh center_yh">
+                            <img src="${chil.item.url1}" width="100" height="100" class="left_yh" style="padding-right: 10px">
+                            <div class="left_yh"style="width: 580px;">
+                                <h3 class="font18 c_33 cont100">${chil.item.name}</h3>
+                                <p class="c_66 font16" style="margin-top: 16px;">折扣：${chil.item.zk}</p>
+                                <p class="c_66 font16" style="margin-top: 16px;">￥：${chil.item.price}</p>
+                            </div>
+                            <div class="right_yh">
+                                <c:if test="${data.status==3}">
+                                    <a href="${ctx}/itemOrder/pj?id=${chil.itemId}"class="onfff block_yh tcenter font16 onHover"
+                                       style="margin-top: 10px;padding-right:6px;">
+                                        去评价
+                                    </a>
+                                </c:if>
+                            </div>
+                        </div>
+                    </c:forEach>
+                    <div style="width: 838px;padding-top :30px;padding-bottom: 30px;"class="hidden_yh center_yh tleft">
+                        <font class="font24">总金额</font>
+                        <font class="font24 red">￥${data.total}</font>
+                        <c:if test="${data.status==0}">
+                            <a href="${ctx}/itemOrder/qx?id=${data.id}"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                取消订单
+                            </a>
+                        </c:if>
+                        <c:if test="${data.status==1}">
+                            <a href="#"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                已取消
+                            </a>
+                        </c:if>
+                        <c:if test="${data.status==2}">
+                            <a href="${ctx}/itemOrder/sh?id=${data.id}"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                去收货
+                            </a>
+                        </c:if>
+                        <c:if test="${data.status==3}">
+                            <a href="#"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                已收货
+                            </a>
+                        </c:if>
+                    </div>
+                </div>
+            </c:forEach>
+        </div>
+
+        <!--待发货-->
+        <div class="allGoods width100 hidden_yh hhD"style="display: none;">
+            <c:forEach items="${dfh}" var="data" varStatus="1">
+                <div class="width100 hidden_yh">
+                    <div class="width100 hidden_yh hon20 c_66" style="background: #faf5f5;
+                text-indent: 47px;line-height: 50px;line-height: 50px;border-bottom:1px solid #ddd;">
+                        <fmt:formatDate value="${data.addTime}" type="both"/>&nbsp;&nbsp;订单号${data.code}
+                        <c:if test="${data.status==0}">待发货</c:if>
+                        <c:if test="${data.status==1}">已取消</c:if>
+                        <c:if test="${data.status==2}">待收货</c:if>
+                        <c:if test="${data.status==3}">已收货</c:if>
+                    </div>
+                    <c:forEach items="${data.details}" var="chil" varStatus="1">
+                        <div style="width: 838px;border-bottom: 1px dashed #dddddd;padding-bottom: 30px;"
+                             class="hidden_yh center_yh">
+                            <img src="${chil.item.url1}" width="100" height="100" class="left_yh" style="padding-right: 10px">
+                            <div class="left_yh"style="width: 580px;">
+                                <h3 class="font18 c_33 cont100">${chil.item.name}</h3>
+                                <p class="c_66 font16" style="margin-top: 16px;">折扣：${chil.item.zk}</p>
+                                <p class="c_66 font16" style="margin-top: 16px;">￥：${chil.item.price}</p>
+                            </div>
+                            <div class="right_yh">
+                                <c:if test="${data.status==3}">
+                                    <a href="${ctx}/itemOrder/pj?id=${chil.itemId}"class="onfff block_yh tcenter font16 onHover"
+                                       style="margin-top: 10px;padding-right:6px;">
+                                        去评价
+                                    </a>
+                                </c:if>
+                            </div>
+                        </div>
+                    </c:forEach>
+                    <div style="width: 838px;padding-top :30px;padding-bottom: 30px;"class="hidden_yh center_yh tleft">
+                        <font class="font24">总金额</font>
+                        <font class="font24 red">￥${data.total}</font>
+                        <c:if test="${data.status==0}">
+                            <a href="${ctx}/itemOrder/qx?id=${data.id}"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                取消订单
+                            </a>
+                        </c:if>
+                        <c:if test="${data.status==1}">
+                            <a href="#"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                已取消
+                            </a>
+                        </c:if>
+                        <c:if test="${data.status==2}">
+                            <a href="${ctx}/itemOrder/sh?id=${data.id}"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                去收货
+                            </a>
+                        </c:if>
+                        <c:if test="${data.status==3}">
+                            <a href="#"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                已收货
+                            </a>
+                        </c:if>
+                    </div>
+                </div>
+            </c:forEach>
+        </div>
+
+        <!--待收货-->
+        <div class="allGoods width100 hidden_yh hhD"style="display: none;">
+            <c:forEach items="${dsh}" var="data" varStatus="1">
+                <div class="width100 hidden_yh">
+                    <div class="width100 hidden_yh hon20 c_66" style="background: #faf5f5;
+                text-indent: 47px;line-height: 50px;line-height: 50px;border-bottom:1px solid #ddd;">
+                        <fmt:formatDate value="${data.addTime}" type="both"/>&nbsp;&nbsp;订单号${data.code}
+                        <c:if test="${data.status==0}">待发货</c:if>
+                        <c:if test="${data.status==1}">已取消</c:if>
+                        <c:if test="${data.status==2}">待收货</c:if>
+                        <c:if test="${data.status==3}">已收货</c:if>
+                    </div>
+                    <c:forEach items="${data.details}" var="chil" varStatus="1">
+                        <div style="width: 838px;border-bottom: 1px dashed #dddddd;padding-bottom: 30px;"
+                             class="hidden_yh center_yh">
+                            <img src="${chil.item.url1}" width="100" height="100" class="left_yh" style="padding-right: 10px">
+                            <div class="left_yh"style="width: 580px;">
+                                <h3 class="font18 c_33 cont100">${chil.item.name}</h3>
+                                <p class="c_66 font16" style="margin-top: 16px;">折扣：${chil.item.zk}</p>
+                                <p class="c_66 font16" style="margin-top: 16px;">￥：${chil.item.price}</p>
+                            </div>
+                            <div class="right_yh">
+                                <c:if test="${data.status==3}">
+                                    <a href="${ctx}/itemOrder/pj?id=${chil.itemId}"class="onfff block_yh tcenter font16 onHover"
+                                       style="margin-top: 10px;padding-right:6px;">
+                                        去评价
+                                    </a>
+                                </c:if>
+                            </div>
+                        </div>
+                    </c:forEach>
+                    <div style="width: 838px;padding-top :30px;padding-bottom: 30px;"class="hidden_yh center_yh tleft">
+                        <font class="font24">总金额</font>
+                        <font class="font24 red">￥${data.total}</font>
+                        <c:if test="${data.status==0}">
+                            <a href="${ctx}/itemOrder/qx?id=${data.id}"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                取消订单
+                            </a>
+                        </c:if>
+                        <c:if test="${data.status==1}">
+                            <a href="#"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                已取消
+                            </a>
+                        </c:if>
+                        <c:if test="${data.status==2}">
+                            <a href="${ctx}/itemOrder/sh?id=${data.id}"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                去收货
+                            </a>
+                        </c:if>
+                        <c:if test="${data.status==3}">
+                            <a href="#"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                已收货
+                            </a>
+                        </c:if>
+                    </div>
+                </div>
+            </c:forEach>
+        </div>
+
+        <!--已收货-->
+        <div class="allGoods width100 hidden_yh hhD"style="display: block;">
+            <c:forEach items="${ysh}" var="data" varStatus="1">
+                <div class="width100 hidden_yh">
+                    <div class="width100 hidden_yh hon20 c_66" style="background: #faf5f5;
+                text-indent: 47px;line-height: 50px;line-height: 50px;border-bottom:1px solid #ddd;">
+                        <fmt:formatDate value="${data.addTime}" type="both"/>&nbsp;&nbsp;订单号${data.code}
+                        <c:if test="${data.status==0}">待发货</c:if>
+                        <c:if test="${data.status==1}">已取消</c:if>
+                        <c:if test="${data.status==2}">待收货</c:if>
+                        <c:if test="${data.status==3}">已收货</c:if>
+                    </div>
+                    <c:forEach items="${data.details}" var="chil" varStatus="1">
+                        <div style="width: 838px;border-bottom: 1px dashed #dddddd;padding-bottom: 30px;"
+                             class="hidden_yh center_yh">
+                            <img src="${chil.item.url1}" width="100" height="100" class="left_yh" style="padding-right: 10px">
+                            <div class="left_yh"style="width: 580px;">
+                                <h3 class="font18 c_33 cont100">${chil.item.name}</h3>
+                                <p class="c_66 font16" style="margin-top: 16px;">折扣：${chil.item.zk}</p>
+                                <p class="c_66 font16" style="margin-top: 16px;">￥：${chil.item.price}</p>
+                            </div>
+                            <div class="right_yh">
+                                <c:if test="${data.status==3}">
+                                    <a href="${ctx}/itemOrder/pj?id=${chil.itemId}"class="onfff block_yh tcenter font16 onHover"
+                                       style="margin-top: 10px;padding-right:6px;">
+                                        去评价
+                                    </a>
+                                </c:if>
+                            </div>
+                        </div>
+                    </c:forEach>
+                    <div style="width: 838px;padding-top :30px;padding-bottom: 30px;"class="hidden_yh center_yh tleft">
+                        <font class="font24">总金额</font>
+                        <font class="font24 red">￥${data.total}</font>
+                        <c:if test="${data.status==0}">
+                            <a href="${ctx}/itemOrder/qx?id=${data.id}"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                取消订单
+                            </a>
+                        </c:if>
+                        <c:if test="${data.status==1}">
+                            <a href="#"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                已取消
+                            </a>
+                        </c:if>
+                        <c:if test="${data.status==2}">
+                            <a href="${ctx}/itemOrder/sh?id=${data.id}"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                去收货
+                            </a>
+                        </c:if>
+                        <c:if test="${data.status==3}">
+                            <a href="#"class="c_33 onHover font20 onorange right_yh"
+                               style="margin-top: 10px;padding-right:6px;">
+                                已收货
+                            </a>
+                        </c:if>
+                    </div>
+                </div>
+            </c:forEach>
+        </div>
+
+
     </div>
 </div>
     </div>
 </div>
 
 
+<script type="text/javascript">
+    $("#navLt span").click(function (){
+       var t=$(this).index();
+       $(this).addClass("select").siblings().removeClass("select");
+       $(".hhD").eq(t).css({display:"block"}).siblings(".hhD").css({display:"none"});
+    });
 
+</script>
 <%@include file="/common/ufooter.jsp"%>
 
 </body>

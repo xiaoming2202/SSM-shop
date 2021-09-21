@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.List;
 
 @Controller
 @RequestMapping("/car")
@@ -64,6 +65,21 @@ public class CarController {
         model.addAttribute("obj",obj);
         return "item/view";
 
+    }
+    /*
+    * 转向我的购物车页面
+    * */
+    @RequestMapping("/findBySql")
+    public String findBySql(Model model,HttpServletRequest request){
+        Object attribute=request.getSession().getAttribute(Consts.USERID);
+        if(attribute==null){
+            return "redirect:/login/toLogin";
+        }
+        Integer userId=Integer.valueOf(attribute.toString());
+        String sql="select * from car where user_id="+userId+" order by id desc";
+        List<Car>list = carService.listBySqlReturnEntity(sql);
+        model.addAttribute("list",list);
+        return "car/car";
     }
 
 
