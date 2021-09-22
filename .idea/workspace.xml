@@ -11,8 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="184eebdf-2f65-43db-8eb7-dbb0b85f5095" name="Default Changelist" comment="商品订单、购物车">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/itemOrder/my.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/itemOrder/my.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/javapandeng/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javapandeng/controller/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/javapandeng/controller/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/javapandeng/controller/CarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/car/car.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/car/car.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +92,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML4 File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/itemOrder" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/car" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3383915" />
@@ -100,11 +100,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaProjects\testMaven13\testMaven\WebRoot\WEB-INF\jsp\car" />
       <recent name="D:\JavaProjects\testMaven13\testMaven\WebRoot\WEB-INF\jsp\itemOrder" />
       <recent name="D:\JavaProjects\testMaven13\testMaven\WebRoot\WEB-INF\jsp\user" />
       <recent name="D:\JavaProjects\testMaven13\testMaven\WebRoot\WEB-INF\jsp\item" />
       <recent name="D:\JavaProjects\testMaven13\testMaven\src\com\javapandeng\mapper" />
-      <recent name="D:\JavaProjects\testMaven13\testMaven\WebRoot\WEB-INF\jsp\login" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\JavaProjects\testMaven13\testMaven\WebRoot\WEB-INF\jsp\item" />
@@ -324,7 +324,7 @@
       <workItem from="1630821074477" duration="69267000" />
       <workItem from="1631247093631" duration="29610000" />
       <workItem from="1631451872800" duration="36970000" />
-      <workItem from="1631789194161" duration="66546000" />
+      <workItem from="1631789194161" duration="71315000" />
     </task>
     <task id="LOCAL-00001" summary="网站用户首页">
       <created>1631805677779</created>
@@ -361,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632231848730</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="商品订单、购物车">
+      <created>1632234664283</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1632234664283</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

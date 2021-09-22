@@ -27,78 +27,47 @@
 <div class="width1200 center_yh hidden_yh font14" style="height:40px;line-height:
 40px;">
     <span>当前位置：</span><a href="${ctx}/login/uIndex"class="c_66">首页></a>>
-    <a href="#" class="c_66">个人中心></a>
-
+    <a href="#" class="c_66">我的购物车></a>
 </div>
-<div class="width100 hidden_yh" style="background: #f0f0f0;padding-top: 34px;
-padding-top:34px;padding-bottom: 34px;">
-    <div class="width1200 hidden_yh center_yh">
-        <div id="vipNav">
-            <a href="${ctx}/user/view"class="on">个人信息</a>
-            <a href="${ctx}/itemOrder/my">我的订单</a>
-            <a href="${ctx}/sc/findBySql">商品收藏</a>
-            <a href="${ctx}/login/pass">修改密码</a>
-        </div>
-        <div id="vipRight">
-            <form action="${ctx}/user/exUpdate" onthod="post" id="myf">
-                <div class="hidden_yh bj_ff"style="width: 938px;border: 1px solid #dd0000;">
-                    <div class="width100 font24 "style="height: 60px;line-height: 60px;
-text-indent: 50px;background: #f5f8fa;border-bottom: 1px solid #ddd;">基本信息</div>
-                    <div class="width100"style="height: 32px;line-height: 32px;margin-top: 25px;">
-                        <div class="left_yh font16 tright"style="width: 120px;">
-                            <font class="red">*</font>真实姓名:
-                        </div>
-                            <input type="text"name="realName" value="${obj.realName}"style="width: 243px;
-border: 1px solid #ddd;outline: none;height: 30px;text-indent: 10px;">
-                        </div>
-                    <div class="width100"style="height: 32px;line-height: 32px;margin-top: 25px;">
-                        <div class="left_yh font16 tright"style="width: 120px;">
-                            <font class="red">*</font>性别:
-                        </div>
-                        <select style="outline: none;border: 1px solid #ddd;height: 30px;"
-                                name="sex">
-                            <option value="男" ${obj.sex=='男'?'selected="selected"':''}>男</option>
-                            <option value="女" ${obj.sex=='女'?'selected="selected"':''}>女</option>
-                        </select>
-                    </div>
-                    <div class="width100"style="height: 32px;line-height: 32px;margin-top: 25px;">
-                        <div class="left_yh font16 tright"style="width: 120px;">
-                            <font class="red">*</font>邮箱:
-                        </div>
-                        <input type="text"name="email" value="${obj.email}"style="width: 243px;
-border: 1px solid #ddd;outline: none;height: 30px;text-indent: 10px;">
-                    </div>
-                    <div class="width100"style="height: 32px;line-height: 32px;margin-top: 25px;">
-                        <div class="left_yh font16 tright"style="width: 120px;">
-                            <font class="red">*</font>手机号:
-                        </div>
-                        <input type="text"name="phone" value="${obj.phone}"style="width: 243px;
-border: 1px solid #ddd;outline: none;height: 30px;text-indent: 10px;">
-                    </div>
-                    <div class="width100"style="height: 32px;line-height: 32px;margin-top: 25px;">
-                        <div class="left_yh font16 tright"style="width: 120px;">
-                            <font class="red">*</font>地址:
-                        </div>
-                        <input type="text"name="address" value="${obj.address}"style="width: 243px;
-border: 1px solid #ddd;outline: none;height: 30px;text-indent: 10px;">
-                    </div>
-                    <div class="width100"style="height: 32px;line-height: 32px;margin-top: 70px;">
-                       <a href="javascript:void(0)" class="left_yh block_yh font16 tcenter ff5802 sub"
-                          style="width: 244px;height: 33px;line-height:33px;margin-left: 120px;">保存</a>
-                    </div>
 
-                    </div>
-            </form>
-        </div>
+<div class="width1200 hidden_yh center_yh font20">
+    全部商品<font class="red">(${fn:length(list)})</font>
+</div>
+<div class="width1200 hidden_yh center_yh "style="border:1px solid #dddddd;margin-top: 18px;min-height:300px;">
+    <div class="width100 hidden_yh font14"style="height: 32px;line-height: 32px;background: #f0f0f0;text-indent: 21px;color: #0000cc;font-weight: 600;border-bottom: 1px solid #ddd;">
+        商品详情
     </div>
+    <div class="width100 hidden_yh fon14"style="height: 42px;line-height: 42px;border-bottom: 1px solid #ddd;">
+        <div class="left_yh tcenter font14"style="width:486px;">商品</div>
+        <div class="left_yh tcenter font14"style="width:175px;">价格</div>
+        <div class="left_yh tcenter font14"style="width:175px;">数量</div>
+        <div class="left_yh tcenter font14"style="width:175px;">小计</div>
+        <div class="left_yh tcenter font14"style="width:175px;">操作</div>
+    </div>
+    <c:forEach items="${list}" var="data" varStatus="1">
+        <div class="specific" data-id="${data.id}">
+            <div class="xzWxz">
+                <b><img src="${ctx}/resource/user/images/xzwxz.png" alt=""></b>
+            </div>
+            <div class="xzSp">
+                <img src="${data.item.url1}">
+                <div class="xzSpIn">
+                <h3 class="font16 c_33 font1000">${data.item.name}</h3>
+                </div>
+            </div>
+
+        </div>
+    </c:forEach>
+
 
 </div>
-<script type="text/javascript">
-    $(function (){
-        $(".sub").click(function (){
-            alert("修改成功");
-            $("#myf").submit();
-        });
+<script>
+    $(".xzWxz").click(function (){
+       if ($(this).hasClass("on")){
+           $(this).removeClass("on");
+       } else{
+           $(this).addClass("on");
+       }
     });
 </script>
 <%@include file="/common/ufooter.jsp"%>
